@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "plugin:prettier/recommended", "prettier/babel"],
+  "plugins": ["babel", "import", "xss"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "babelOptions": {
+      "presets": [
+        "@babel/preset-env",
+        {
+          "targets": ["> 0.25%", "not dead"]
+        }
+      ],
+      "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jquery": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.babel.js"
+      }
+    }
+  }
+}
