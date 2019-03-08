@@ -1,4 +1,6 @@
-export const images = {
+const envMode = process.env.NODE_ENV
+
+const images = {
   test: /\.(png|svg|jpe?g|gif|webp)$/,
   use: [
     {
@@ -13,6 +15,8 @@ export const images = {
     {
       loader: 'image-webpack-loader',
       options: {
+        // Enables only in production build
+        disable: envMode === 'production',
         mozjpeg: {
           progressive: true,
           quality: 85,
@@ -34,3 +38,6 @@ export const images = {
     },
   ],
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export { images }

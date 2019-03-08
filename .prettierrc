@@ -5,5 +5,5 @@
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true,
-  "htmlWhitespaceSensitivity": "strict"
+  "htmlWhitespaceSensitivity": "css"
 }

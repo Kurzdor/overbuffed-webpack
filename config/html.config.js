@@ -2,11 +2,13 @@ import fs from 'fs'
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-export const generateHtmlTemplates = templatesDir => {
-  const htmls = fs.readdirSync(path.resolve(process.cwd(), templatesDir))
+const generateHtmlTemplates = templatesDir => {
+  const htmls = fs.readdirSync(
+    path.resolve(process.cwd(), templatesDir)
+  )
   const templates = []
 
-  for (let i = 0; i < htmls.length; i++) {
+  for (let i = 0; i < htmls.length; i += 1) {
     const html = htmls[i]
     const file = html.split('.')
     const name = file[0]
@@ -25,6 +27,7 @@ export const generateHtmlTemplates = templatesDir => {
             // inject: false,
           })
         )
+        break
 
       default:
         break
@@ -33,3 +36,6 @@ export const generateHtmlTemplates = templatesDir => {
 
   return templates
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export { generateHtmlTemplates }

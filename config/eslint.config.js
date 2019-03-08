@@ -1,4 +1,4 @@
-export const eslint = {
+const eslint = {
   test: /\.js$/,
   enforce: 'pre',
   exclude: /node_modules/,
@@ -15,3 +15,6 @@ export const eslint = {
     },
   ],
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export { eslint }

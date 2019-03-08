@@ -7,7 +7,7 @@ import { constants } from './constants.config'
 
 const envMode = process.env.NODE_ENV
 
-export const styles = {
+const styles = {
   test: constants.SASS_LOADER_TEST_STRING,
   use: [
     {
@@ -36,7 +36,7 @@ export const styles = {
             autoprefixer: {
               flexbox: 'no-2009',
             },
-            broswers: POSTCSS_AUTOPREFIXER_BROWSERSLIST,
+            broswers: constants.POSTCSS_AUTOPREFIXER_BROWSERSLIST,
           }),
         ],
       },
@@ -50,3 +50,6 @@ export const styles = {
     },
   ],
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export { styles }
